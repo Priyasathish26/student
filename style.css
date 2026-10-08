@@ -1,0 +1,257 @@
+/* ========== 1. COLOURS & BASIC SETTINGS ==========
+   Change the colours here and the whole website updates. */
+:root {
+  --main: #0f766e;        /* main teal colour */
+  --main-dark: #0b5a54;   /* darker teal for hover */
+  --accent: #f59e0b;      /* amber highlight */
+  --text: #1f2937;
+  --light-bg: #f1f5f4;
+  --white: #ffffff;
+}
+
+* {                       /* removes default spacing */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--main); }
+
+/* ========== 2. NAVIGATION BAR ========== */
+.navbar {
+  position: sticky;       /* stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8%;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--main);
+}
+.logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+.nav-links a:hover {      /* hover effect */
+  color: var(--main);
+  border-bottom-color: var(--accent);
+}
+
+.menu-btn {               /* hidden on big screens */
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--main);
+  cursor: pointer;
+}
+
+/* ========== 3. HOME ========== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: linear-gradient(135deg, var(--main), #134e4a);
+  color: var(--white);
+}
+.hero-content { max-width: 650px; }
+.hello { font-size: 1.2rem; color: var(--accent); font-weight: 500; }
+.hero h1 { font-size: 3rem; line-height: 1.2; margin: 6px 0; }
+.hero h2 { font-size: 1.3rem; font-weight: 500; margin-bottom: 16px; }
+.hero-text { margin-bottom: 28px; opacity: 0.92; }
+
+/* ========== 4. BUTTON ========== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #1f2937;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--white);
+  transform: translateY(-3px);
+}
+
+/* ========== 5. SECTIONS (shared style) ========== */
+.section { padding: 80px 8%; }
+.alt { background: var(--light-bg); }   /* grey background for alternate sections */
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--main);
+  margin-bottom: 40px;
+}
+
+/* Keeps the heading visible below the sticky navbar when scrolling */
+section { scroll-margin-top: 60px; }
+
+/* ========== 6. CARDS (skills, projects, education) ========== */
+.card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+.card:hover {             /* card lifts up on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== 7. ABOUT ========== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+.profile-photo {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 50%;
+  border: 6px solid var(--accent);
+  margin: auto;
+  display: block;
+}
+.about-list { list-style: none; margin-top: 16px; }
+.about-list li { padding: 6px 0; border-bottom: 1px solid #e5e7eb; }
+
+/* ========== 8. SKILLS ========== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+.skill {
+  text-align: center;
+  font-weight: 600;
+  color: var(--main);
+}
+.skill:hover { background: var(--main); color: var(--white); }
+
+/* ========== 9. PROJECTS ========== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.project h3 { color: var(--main); margin-bottom: 8px; }
+.project p { margin-bottom: 8px; }
+.tech { font-size: 0.9rem; color: #6b7280; }
+.project a { font-weight: 600; text-decoration: none; }
+.project a:hover { color: var(--accent); }
+
+/* ========== 10. EDUCATION ========== */
+.edu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.edu h3 { color: var(--main); }
+.year { color: var(--accent); font-weight: 600; }
+
+/* ========== 11. CONTACT ========== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+form label { display: block; margin: 14px 0 6px; font-weight: 500; }
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+form input:focus, form textarea:focus {
+  outline: 2px solid var(--main);
+  border-color: var(--main);
+}
+form .btn { margin-top: 18px; background: var(--main); color: var(--white); }
+form .btn:hover { background: var(--main-dark); color: var(--white); }
+
+.error { color: #dc2626; font-size: 0.85rem; }
+.thanks { margin-top: 14px; color: #15803d; font-weight: 600; }
+
+.contact-info p { margin-bottom: 14px; word-break: break-word; }
+
+/* ========== 12. FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #134e4a;
+  color: var(--white);
+}
+
+/* ========== 13. RESPONSIVE DESIGN (media queries) ========== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2.4rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid { gap: 24px; }
+}
+
+/* Mobile: menu becomes a dropdown */
+@media (max-width: 700px) {
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;                 /* hidden until the button is tapped */
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.open { display: flex; } /* JavaScript adds "open" */
+  .nav-links li { text-align: center; }
+  .nav-links a { display: block; padding: 14px; border-bottom: none; }
+
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.1rem; }
+  .section { padding: 60px 6%; }
+}
